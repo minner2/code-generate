@@ -1,19 +1,23 @@
 package com.msl;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.io.File;
+
+import static com.msl.generator.StaticGenerator.copyFilesByHutool;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        //获取整个项目的根目录
+        String projectPath = System.getProperty("user.dir");
+        File parentFile = new File(projectPath).getParentFile();
+        //输入路径：ACM示例代码模板目录
+        String inputPath = new File(parentFile,"demo-projects/acm-template").getAbsolutePath();
+        //输出路径：直接输出到项目的根目录
+        String outputPath = projectPath;
+        copyFilesByHutool(inputPath,outputPath);
+        System.out.println(projectPath);
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
     }
+
+
 }

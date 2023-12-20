@@ -3,14 +3,11 @@ package com.yupi.acm;
 import java.util
 /**
 * ACM 输入模板（多数之和）
-* @author ${author}
+* @author RayMind
 */
 public class MainTemplate {
 public static void main(String[] args) {
 Scanner scanner = new Scanner(System.in);
-<#if loop>
-while (scanner.hasNext()) {
-</#if>
 // 读取输入元素
 int n = scanner.nextInt();
 // 读取数组
@@ -26,10 +23,7 @@ for (int num : arr) {
 sum += num;
 }
 
-System.out.println("${outputText} " + sum);
-<#if loop>
-}
-</#if>
+System.out.println("两数之和等于:  " + sum);
 
 scanner.close();
 }
